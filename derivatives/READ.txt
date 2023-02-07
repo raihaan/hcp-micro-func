@@ -1,0 +1,19 @@
+This folder builds the coupling coefficient input matrix for NMF using preprocessed data
+Inputs are the computed coupling coefficeint arrays for each subj in ../preprocessed
+
+df_inputs.csv - spreadsheet containing subject ids and the associated coupling .txt files in ../preprocessed
+		created using bash loops
+
+#each of the following are computed via the extract_metrics.py script, run as below
+concatfc_coupling.mat - .mat file containing a regions x subjects matrix, values are coupling coefficients
+concatfc_coupling_mean.txt - mean of each regions coupling, averaged across subjects
+concatfc_coupling_stdev.txt - std of coupling acros subjects
+wb_coupling_concat.mat - identical to concatfc_coupling.mat
+
+#output with the plot_input.py script
+wb_coupling_concat_mx.png - heatmap of coupling coef mx
+
+On Niagara:
+module load cobralab/2019b
+python extract_metrics.py --metric coupling_concat --metric_column concatfc_coupling --input_csv df_inputs.csv --mask_file ../preprocessed/roi_mask.txt
+python plot_input.py --input wb_coupling_concat.mat --output wb_coupling_concat_mx.png --minimum -0.4 --maximum 0.4
