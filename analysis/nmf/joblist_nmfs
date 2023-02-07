@@ -1,0 +1,5 @@
+python nmf.py ../../derivatives/wb_coupling_concat.mat 4 output/k4/ k4
+python nmf.py ../../derivatives/wb_coupling_concat.mat 10 output/k10/ k10
+python nmf.py ../../derivatives/wb_coupling_concat.mat 17 output/k17/ k17
+python nmf.py ../../derivatives/wb_coupling_concat.mat 26 output/k26/ k26
+python nmf.py ../../derivatives/wb_coupling_concat.mat 31 output/k31/ k31

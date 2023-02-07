@@ -1,0 +1,5 @@
+each folder contains maps thresholded at diff level
+
+eg 75p: thresholded at 75th percentile - ie 0-75p = 0, 75p+ = 1, so its the top 25% of regions are 1, rest 0
+
+within each folder are .txt and .pscalar.nii versions of data. .pscalar.nii are cifti files, can be viewed along with S1200* surface files

@@ -1,0 +1,9 @@
+This folder contains nmf outputs and does some postprocessing of nmf outputs
+
+convert.py - takes in .mat nmf results and writes out 1 .txt file for each component (ie column of W)
+postproc_nmf.sh - wrapper script which runs convert.py and then converts .txt files to pscalar.nii files for visulizing in wb_view
+plot_Hweights.py - script for plotting H weight matrix and related figs
+
+To run:
+./postproc_nmf.sh k4/k4.mat
+python plot_Hweights.py --nmf_weights k4/k4.mat --out_dir k4/

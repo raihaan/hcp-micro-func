@@ -1,0 +1,21 @@
+This folder contains output of the k4 NMF run, the current main analysis of interest
+
+c?.txt - output from ../convert.py (and ../postproc_nmf.sh)
+	.txt files containing regional component scores
+
+.csv files contiaing the componennt weights of each subject, in each of 4 compontnets:
+demographics_and_nmfweights_k4.csv - merge of demographics and component weights 
+Hweights_k4.csv - csv containing only component weights and subject id column
+
+both above .csv files created by running:
+python ../../../../cobra-nmf/vertex/Hweights_tocsv.py --nmf_results k4.mat --metrics coupling --demo_csv ../../../../raw_data/merged_sorted_r277_unrelated_setA_n384.csv --id_col Subject
+
+
+*.png files are all created with the ../plot_Hweights.py, see ../READ.txt for more	
+
+compare_comps/
+	folder  containing a .ipynb and joblist of commands to create ranked comparisons of components
+	regions are ranked based on component scores (0 lowest. 400 highest), then rankings compared
+	run compare_comps/comparecomps_rankcompare.ipynb notebook to compute rankings, and do subtractions
+	run compare_comps/commands_convert to convert outputs from notebook to cifti files for visualizing
+

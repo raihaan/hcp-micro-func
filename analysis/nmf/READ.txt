@@ -1,0 +1,20 @@
+In this folder, input mx from ../../derivatives is analyzed using NMF
+This folder contains the 'main run' of NMF on the full dataset and also the stability runs in the stability/ folder
+
+In this folder:
+joblist_nmfs - a few nmfs run on varying granularities
+nmf.py - wrapper script for running nmf with sklearn. takes in .mat file (input matrix must have key 'X'), shifts to get non negativity, runs nmf
+
+To run:
+module load cobralab/2019b
+qbatch -c 1 -w 1:00:00 joblist_nmfs
+#outputs are stored in output/
+
+stability/
+	folder containing stability analysis, see stability/READ.txt for more
+
+
+output/
+	folder containing output of nmf runs
+	also includes postprocessing scripts/steps to convert nmf results to files for visualization/further analysis
+	see readme here for more

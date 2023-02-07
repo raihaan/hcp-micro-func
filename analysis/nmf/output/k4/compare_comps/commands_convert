@@ -1,0 +1,16 @@
+wb_command -cifti-convert -from-text c1-c1.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c1-c1.pscalar.nii
+wb_command -cifti-convert -from-text c1-c2.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c1-c2.pscalar.nii
+wb_command -cifti-convert -from-text c1-c3.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c1-c3.pscalar.nii
+wb_command -cifti-convert -from-text c1-c4.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c1-c4.pscalar.nii
+wb_command -cifti-convert -from-text c2-c1.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c2-c1.pscalar.nii
+wb_command -cifti-convert -from-text c2-c2.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c2-c2.pscalar.nii
+wb_command -cifti-convert -from-text c2-c3.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c2-c3.pscalar.nii
+wb_command -cifti-convert -from-text c2-c4.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c2-c4.pscalar.nii
+wb_command -cifti-convert -from-text c3-c1.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c3-c1.pscalar.nii
+wb_command -cifti-convert -from-text c3-c2.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c3-c2.pscalar.nii
+wb_command -cifti-convert -from-text c3-c3.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c3-c3.pscalar.nii
+wb_command -cifti-convert -from-text c3-c4.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c3-c4.pscalar.nii
+wb_command -cifti-convert -from-text c4-c1.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c4-c1.pscalar.nii
+wb_command -cifti-convert -from-text c4-c2.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c4-c2.pscalar.nii
+wb_command -cifti-convert -from-text c4-c3.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c4-c3.pscalar.nii
+wb_command -cifti-convert -from-text c4-c4.txt ../../../../../raw_data/atlas_files/Schaeffer_template.pscalar.nii c4-c4.pscalar.nii

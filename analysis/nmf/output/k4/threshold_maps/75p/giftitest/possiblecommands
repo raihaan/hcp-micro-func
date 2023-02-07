@@ -1,0 +1,8 @@
+#getting a label.gii file
+
+1. move from pscalar to dscalar
+
+
+wb_command -cifti-parcel-mapping-to-label c1.75p.pscalar.nii COLUMN ../../../../../../../raw_data/atlas_files/Parcellations/HCP/fslr32k/cifti/Schaefer2018_400Parcels_17Networks_order.dlabel.nii c1.75p.dlabel.nii
+wb_command -cifti-separate Schaefer2018_400Parcels_17Networks_order.dlabel.nii COLUMN -metric CORTEX_LEFT Schaeffer_left.shape.gii
+wb_command -metric-label-import Schaeffer_left.shape.gii  Schaeffer_left.label.gii
