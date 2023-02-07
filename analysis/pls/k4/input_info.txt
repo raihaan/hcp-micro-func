@@ -1,0 +1,10 @@
+Groups: [380]
+Num of conditions: 1
+Num of permutations: 5
+Bootstrapping: 5
+Bootstrapping: 100
+Bootstrapping: 0.25
+Bootstrapping: False
+Rotations: True
+Confidence Intervals: 95
+Verbose: True

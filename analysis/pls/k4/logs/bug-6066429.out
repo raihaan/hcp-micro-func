@@ -1,0 +1,21 @@
+/home/m/mchakrav/patelmo6/virtual_envs/PLS_venv/lib/python3.6/site-packages/pyls-0.0.1-py3.6.egg/pyls/base.py:289: UserWarning: Setting n_proc > 1 requires the joblib module. Considering installing joblib and re-running this if you would like parallelization. Resetting n_proc to 1 for now.
+  warnings.warn('Setting n_proc > 1 requires the joblib module. '
+X is
+   Comp1_coupling  Comp2_coupling  Comp3_coupling  Comp4_coupling
+0        0.717454        0.398154        0.325651        0.108369
+1        0.323681        0.020280        1.019144        0.541393
+2        0.697106        0.287404        0.550734        0.102591
+3        0.344725        0.419427        0.588132        0.344262
+4        0.734624        0.353754        0.488739        0.161713
+Y is
+   PicSeq_AgeAdj  CardSort_AgeAdj  ...  IWRD_RTC  ListSort_AgeAdj
+0          84.24           107.87  ...    1529.5            94.33
+1          94.08           103.17  ...    1470.0            85.26
+2         130.24            98.08  ...    1830.0            98.44
+3         112.44            85.56  ...    1607.5            98.44
+4         101.07            88.74  ...    1320.0            98.44
+
+[5 rows x 19 columns]
+5 bootstraps and 5 permutations
+saving to ./
+Making permutations:   0%|          | 0/5 | 00:00<?                                                   Running permutations:   0%|          | 0/5 | 00:00<?                                                    Making bootstraps:   0%|          | 0/5 | 00:00<?                                                 Running bootstraps:   0%|          | 0/5 | 00:00<?                                                  Running cross-validation:   0%|          | 0/100 | 00:00<?Running cross-validation:  38%|###8      | 38/100 | 00:00<00:00Running cross-validation:  76%|#######6  | 76/100 | 00:00<00:00                                                               

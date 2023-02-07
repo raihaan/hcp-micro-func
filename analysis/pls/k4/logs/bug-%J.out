@@ -1,0 +1,72 @@
+
+scontrol show jobid 6066429
+JobId=6066429 JobName=submit-d.sh
+   UserId=patelmo6(3025081) GroupId=mchakrav(6002763) MCS_label=N/A
+   Priority=12035698 Nice=0 Account=rrg-mchakrav-ab QOS=normal
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:13 TimeLimit=01:00:00 TimeMin=N/A
+   SubmitTime=2021-09-05T14:24:22 EligibleTime=2021-09-05T14:24:22
+   AccrueTime=2021-09-05T14:24:22
+   StartTime=2021-09-05T14:24:24 EndTime=2021-09-05T14:24:37 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2021-09-05T14:24:24
+   Partition=debug AllocNode:Sid=nia-login06:427296
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=nia0407
+   BatchHost=nia0407
+   NumNodes=1 NumCPUs=80 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=80,mem=175000M,node=1,billing=40
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=175000M MinTmpDiskNode=0
+   Features=[skylake|cascade] DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/fs0/scratch/m/mchakrav/patelmo6/HCP/hcp-micro-func/analysis/pls/k4/submit-d.sh
+   WorkDir=/gpfs/fs0/scratch/m/mchakrav/patelmo6/HCP/hcp-micro-func/analysis/pls/k4
+   StdErr=/gpfs/fs0/scratch/m/mchakrav/patelmo6/HCP/hcp-micro-func/analysis/pls/k4/logs/bug-%J.out
+   StdIn=/dev/null
+   StdOut=/gpfs/fs0/scratch/m/mchakrav/patelmo6/HCP/hcp-micro-func/analysis/pls/k4/logs/bug-%J.out
+   Power=
+   MailUser=patelmo6@scinet.local MailType=NONE
+
+sacct -j 6066429
+       JobID    JobName    Account    Elapsed  MaxVMSize     MaxRSS  SystemCPU    UserCPU ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
+6066429      submit-d.+ rrg-mchak+   00:00:13                        00:00.542  00:01.620      0:0 
+6066429.bat+      batch rrg-mchak+   00:00:13    138528K      1244K  00:00.542  00:01.619      0:0 
+6066429.ext+     extern rrg-mchak+   00:00:13    138360K      1068K   00:00:00   00:00:00      0:0 
+
+scontrol show jobid 6066443
+JobId=6066443 JobName=submit-d.sh
+   UserId=patelmo6(3025081) GroupId=mchakrav(6002763) MCS_label=N/A
+   Priority=12035698 Nice=0 Account=rrg-mchakrav-ab QOS=normal
+   JobState=COMPLETING Reason=NonZeroExitCode Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=1:0
+   RunTime=00:00:34 TimeLimit=01:00:00 TimeMin=N/A
+   SubmitTime=2021-09-05T14:36:40 EligibleTime=2021-09-05T14:36:40
+   AccrueTime=2021-09-05T14:36:40
+   StartTime=2021-09-05T14:36:45 EndTime=2021-09-05T14:37:19 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2021-09-05T14:36:45
+   Partition=debug AllocNode:Sid=nia-login06:427296
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=nia1415
+   BatchHost=nia1415
+   NumNodes=1 NumCPUs=80 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=80,mem=175000M,node=1,billing=40
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=175000M MinTmpDiskNode=0
+   Features=[skylake|cascade] DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/fs0/scratch/m/mchakrav/patelmo6/HCP/hcp-micro-func/analysis/pls/k4/submit-d.sh
+   WorkDir=/gpfs/fs0/scratch/m/mchakrav/patelmo6/HCP/hcp-micro-func/analysis/pls/k4
+   StdErr=/gpfs/fs0/scratch/m/mchakrav/patelmo6/HCP/hcp-micro-func/analysis/pls/k4/logs/bug-%J.out
+   StdIn=/dev/null
+   StdOut=/gpfs/fs0/scratch/m/mchakrav/patelmo6/HCP/hcp-micro-func/analysis/pls/k4/logs/bug-%J.out
+   Power=
+   MailUser=patelmo6@scinet.local MailType=NONE
+
+sacct -j 6066443
+       JobID    JobName    Account    Elapsed  MaxVMSize     MaxRSS  SystemCPU    UserCPU ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
+6066443      submit-d.+ rrg-mchak+   00:00:34                        00:00.527  00:02.121      1:0 
+6066443.bat+      batch rrg-mchak+   00:00:34    138528K      1248K  00:00.527  00:02.120      1:0 
+6066443.ext+     extern rrg-mchak+   00:00:34    138360K       880K   00:00:00   00:00:00      0:0 

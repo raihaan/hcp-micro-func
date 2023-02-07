@@ -1,0 +1,107 @@
+#!/bin/sh
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=80
+#SBATCH --output=/gpfs/fs0/scratch/m/mchakrav/patelmo6/HCP/hcp-micro-func/analysis/pls/k4/logs/slurm-plsc_joblist-%j.out
+#SBATCH -D /gpfs/fs0/scratch/m/mchakrav/patelmo6/HCP/hcp-micro-func/analysis/pls/k4
+#SBATCH --job-name=plsc_joblist
+#SBATCH 
+#SBATCH 
+#SBATCH 
+#SBATCH --time=00:30:00
+#SBATCH 
+#SBATCH --mail-type=ARRAY_TASKS,FAIL,REQUEUE
+#SBATCH --export=NONE
+# -- start copied env
+export SCINET_QBATCH_ROOT="/scinet/niagara/software/2019b/opt/base/qbatch/2.2.1"
+export __LMOD_REF_COUNT_MODULEPATH="/scinet/niagara/software/2019b/modules/base:1;/project/m/mchakrav/quarantine/modules:1;/scinet/niagara/stacks:1"
+export LMOD_SETTARG_FULL_SUPPORT="no"
+export SACCT_FORMAT="JobID%12,User,Account%15,AllocNodes%10,Start,End,Elapsed,AllocTRES%30,CPUTime,NodeList,ExitCode,State%11"
+export VIRTUAL_ENV="/home/m/mchakrav/patelmo6/virtual_envs/PLS_venv"
+export SHELL="/bin/bash"
+export BASH_ENV="/scinet/niagara/etc/profile.d/bashenv"
+export OCTAVE_HISTFILE="/scratch/m/mchakrav/patelmo6/.octave_hist"
+export HISTSIZE="1000"
+export CC_CLUSTER="niagara"
+export MANPATH="/scinet/niagara/software/2019b/opt/base/gnu-parallel/20191122/share/man:/scinet/intel/2019u4/intelpython3/share/man:/opt/slurm/share/man:/scinet/niagara/software/2019b/lmod/lmod/share/man::/scinet/niagara/share/man"
+export SQUEUE_FORMAT="%.15i %.15u %.14a %.14j %.3t %.10L %P %.5D %.4C %N (%r)"
+export FPATH="/scinet/niagara/software/2019b/lmod/lmod/init/ksh_funcs"
+export __LMOD_REF_COUNT_CMAKE_PREFIX_PATH="/scinet/niagara/software/2019b/opt/base/qbatch/2.2.1:1;/scinet/niagara/software/2019b/opt/base/gnu-parallel/20191122:1"
+export PARALLEL="-j4"
+export SCINET_GNU_PARALLEL_ROOT="/scinet/niagara/software/2019b/opt/base/gnu-parallel/20191122"
+export HOSTNAME="nia-login06.scinet.local"
+export LMOD_ROOT="/scinet/niagara/software/2019b/lmod"
+export _ModuleTable002_="b2Z0d2FyZS8yMDE5Yi9tb2R1bGVzL2Jhc2UvZ251LXBhcmFsbGVsLzIwMTkxMTIyIixbImZ1bGxOYW1lIl09ImdudS1wYXJhbGxlbC8yMDE5MTEyMiIsWyJsb2FkT3JkZXIiXT0zLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09ImdudS1wYXJhbGxlbCIsfSxpbnRlbHB5dGhvbjM9e1siZm4iXT0iL3NjaW5ldC9uaWFnYXJhL3NvZnR3YXJlLzIwMTliL21vZHVsZXMvYmFzZS9pbnRlbHB5dGhvbjMvMjAxOXU0IixbImZ1bGxOYW1lIl09ImludGVscHl0aG9uMy8yMDE5dTQiLFsibG9hZE9yZGVyIl09Mixwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJpbnRlbHB5"
+export CLUSTER="niagara"
+export LMOD_PACKAGE_PATH="/scinet/niagara/etc/lmodconfig"
+export MAIL="/var/spool/mail/patelmo6"
+export LS_COLORS="rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:"
+export __LMOD_REF_COUNT_MANPATH="/scinet/niagara/software/2019b/opt/base/gnu-parallel/20191122/share/man:1;/scinet/intel/2019u4/intelpython3/share/man:1;/opt/slurm/share/man:1;/scinet/niagara/software/2019b/lmod/lmod/share/man:1;/scinet/niagara/share/man:1"
+export LESSOPEN="||/usr/bin/lesspipe.sh %s"
+export SLURM_CONF="/opt/slurm/etc/slurm.conf"
+export USER="patelmo6"
+export LOGINMESSAGEONCE="1"
+export PS1="(PLS_venv) \u@\h:\w\$$ "
+export QBATCH_CORES="40"
+export __LMOD_REF_COUNT_LD_LIBRARY_PATH="/scinet/niagara/software/2019b/core/lib64:1;/opt/slurm/lib64:1"
+export SHLVL="1"
+export QBATCH_SYSTEM="slurm"
+export MODULESHOME="/scinet/niagara/software/2019b/lmod/lmod"
+export _ModuleTable001_="X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT1mYWxzZSxkZXB0aFQ9e30sZmFtaWx5PXtbImNvbmRhIl09ImludGVscHl0aG9uMyIsWyJlbnYiXT0iTmlhRW52Iix9LG1UPXtOaWFFbnY9e1siZm4iXT0iL3NjaW5ldC9uaWFnYXJhL3N0YWNrcy9OaWFFbnYvMjAxOWIubHVhIixbImZ1bGxOYW1lIl09Ik5pYUVudi8yMDE5YiIsWyJsb2FkT3JkZXIiXT0xLHByb3BUPXtsbW9kPXtbInN0aWNreSJdPTEsfSx9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09Ik5pYUVudi8yMDE5YiIsfSxbImdudS1wYXJhbGxlbCJdPXtbImZuIl09Ii9zY2luZXQvbmlhZ2FyYS9z"
+export QBATCH_OPTIONS="--mail-type=ARRAY_TASKS,FAIL,REQUEUE"
+export LMOD_VERSION="8.4.16"
+export LMOD_AVAIL_STYLE=""
+export __LMOD_REF_COUNT_PATH="/scinet/niagara/software/2019b/opt/base/qbatch/2.2.1/bin:1;/scinet/niagara/software/2019b/opt/base/gnu-parallel/20191122/bin:1;/home/m/mchakrav/patelmo6/virtual_envs/PLS_venv/bin:1;/scinet/intel/2019u4/intelpython3/bin:1;/scinet/niagara/software/2019b/core/bin:1;/opt/slurm/bin:1;/usr/local/bin:1;/usr/bin:1;/usr/local/sbin:1;/usr/sbin:1;/scinet/niagara/bin:1;/usr/lpp/mmfs/bin:1"
+export _="/scinet/niagara/software/2019b/opt/base/qbatch/2.2.1/bin/qbatch"
+export MODULEPATH="/scinet/niagara/software/2019b/modules/base:/project/m/mchakrav/quarantine/modules:/scinet/niagara/stacks"
+export LMOD_SHORT_TIME="86400"
+export SSH_CONNECTION="184.146.55.94 53784 142.150.188.70 22"
+export SCANCEL_VERBOSE="T"
+export PURGINGMESSAGEONCE="1"
+export _LMFILES_="/scinet/niagara/stacks/NiaEnv/2019b.lua:/scinet/niagara/software/2019b/modules/base/intelpython3/2019u4:/scinet/niagara/software/2019b/modules/base/gnu-parallel/20191122:/scinet/niagara/software/2019b/modules/base/qbatch/2.2.1"
+export __LMOD_REF_COUNT_LOADEDMODULES="NiaEnv/2019b:1;intelpython3/2019u4:1;gnu-parallel/20191122:1;qbatch/2.2.1:1"
+export LMOD_DIR="/scinet/niagara/software/2019b/lmod/lmod/libexec"
+export QBATCH_CHUNKSIZE="40"
+export LMOD_PKG="/scinet/niagara/software/2019b/lmod/lmod"
+export QUARANTINE_PATH="/project/m/mchakrav/quarantine"
+export MODULEPATH_ROOT="/scinet/niagara/software/2019b/modules"
+export HOME="/home/m/mchakrav/patelmo6"
+export LD_LIBRARY_PATH="/scinet/niagara/software/2019b/core/lib64:/opt/slurm/lib64"
+export LANG="en_CA.UTF-8"
+export __LMOD_REF_COUNT__LMFILES_="/scinet/niagara/stacks/NiaEnv/2019b.lua:1;/scinet/niagara/software/2019b/modules/base/intelpython3/2019u4:1;/scinet/niagara/software/2019b/modules/base/gnu-parallel/20191122:1;/scinet/niagara/software/2019b/modules/base/qbatch/2.2.1:1"
+export _ModuleTable_Sz_="3"
+export LMOD_FAMILY_CONDA="intelpython3"
+export LMOD_CMD="/scinet/niagara/software/2019b/lmod/lmod/libexec/lmod"
+export BBUFFER="/you.do.not.have.burst.buffer.space/"
+export SSH_TTY="/dev/pts/31"
+export OLDPWD="/home/m/mchakrav/patelmo6/scratch/HCP/hcp-micro-func/analysis/pls"
+export LMOD_RC="/scinet/niagara/etc/lmodrc.lua"
+export LMOD_SYSTEM_DEFAULT_MODULES=""
+export LMOD_FAMILY_CONDA_VERSION="2019u4"
+export SSH_CLIENT="184.146.55.94 53784 22"
+export LOGNAME="patelmo6"
+export LMOD_FAMILY_ENV="NiaEnv"
+export PATH="/scinet/niagara/software/2019b/opt/base/qbatch/2.2.1/bin:/scinet/niagara/software/2019b/opt/base/gnu-parallel/20191122/bin:/home/m/mchakrav/patelmo6/virtual_envs/PLS_venv/bin:/scinet/intel/2019u4/intelpython3/bin:/scinet/niagara/software/2019b/core/bin:/opt/slurm/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/scinet/niagara/bin:/usr/lpp/mmfs/bin"
+export RSNT_ARCH="avx512"
+export ARCH="x86_64"
+export TERM="xterm-256color"
+export CMAKE_PREFIX_PATH="/scinet/niagara/software/2019b/opt/base/qbatch/2.2.1:/scinet/niagara/software/2019b/opt/base/gnu-parallel/20191122"
+export SSH_USER_AUTH="keyboard-interactive"
+export __LMOD_SET_FPATH="1"
+export _ModuleTable003_="dGhvbjMiLH0scWJhdGNoPXtbImZuIl09Ii9zY2luZXQvbmlhZ2FyYS9zb2Z0d2FyZS8yMDE5Yi9tb2R1bGVzL2Jhc2UvcWJhdGNoLzIuMi4xIixbImZ1bGxOYW1lIl09InFiYXRjaC8yLjIuMSIsWyJsb2FkT3JkZXIiXT00LHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09InFiYXRjaCIsfSx9LG1wYXRoQT17Ii9zY2luZXQvbmlhZ2FyYS9zb2Z0d2FyZS8yMDE5Yi9tb2R1bGVzL2Jhc2UiLCIvcHJvamVjdC9tL21jaGFrcmF2L3F1YXJhbnRpbmUvbW9kdWxlcyIsIi9zY2luZXQvbmlhZ2FyYS9zdGFja3MiLH0sWyJzeXN0ZW1CYXNlTVBBVEgiXT0iL3NjaW5ldC9uaWFnYXJhL3N0YWNrcyIsfQ=="
+export QBATCH_NODES="1"
+export LMOD_FAMILY_ENV_VERSION="2019b"
+export LEGALMESSAGEONCE="1"
+export QBATCH_PPJ="80"
+export PROJECT="/project/m/mchakrav/patelmo6"
+export SLURM_EXPORT_ENV="ALL"
+export SCRATCH="/scratch/m/mchakrav/patelmo6"
+export LMOD_sys="Linux"
+export LOADEDMODULES="NiaEnv/2019b:intelpython3/2019u4:gnu-parallel/20191122:qbatch/2.2.1"
+export RSNT_INTERCONNECT="infiniband"
+export HISTCONTROL="ignoredups"
+# -- end copied env
+
+ARRAY_IND=$SLURM_ARRAY_TASK_ID
+
+export THREADS_PER_COMMAND=2
+python plsc.py x_brain_k4.csv ../y_behavs.csv 5000 5000 ./

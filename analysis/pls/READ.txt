@@ -1,0 +1,12 @@
+This folder runs pls with x=nmf weights, y = cognitive performance on 19 tests
+
+make_pls_behavs.ipynb - this notebook reads in demographics and nmf output to create the X and Y spreadsheets needed for pls. it outpus each of the following:
+
+x_brain_k4.csv - one row per subject, one columb per component. values are component weights
+y_behavs.csv - one row per subject, one column per cog test. values are cog performance
+y_unadj_behavs.csv - same as above but using non age adj cog scores. not currently used
+df_nmf_cog_age_gender.csv - spreadsheet with combined nmf and cog data
+df_nmf_cogunadj_age_gender.csv - same as above but for non age adj cog scores
+
+k4/
+	folder contains pls run of k4 nmf analysis and its outputs

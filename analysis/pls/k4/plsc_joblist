@@ -1,0 +1,1 @@
+python plsc.py x_brain_k4.csv ../y_behavs.csv 5000 5000 ./

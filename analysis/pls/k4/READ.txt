@@ -1,0 +1,2 @@
+qbatch --header '/home/m/mchakrav/patelmo6/virtual_envs/PLS_venv/bin/activate' --header 'module load gnu-parallel qbatch' --env none -c1 -w 00:30:00 plsc_joblist
+qbatch -c1 -w 00:30:00 plsc_joblist
