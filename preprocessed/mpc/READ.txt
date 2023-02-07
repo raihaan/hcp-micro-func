@@ -1,0 +1,12 @@
+#this folder contains microstructural profile covar (MPC) data
+
+MPC.mat - .mat file containing mpc matrices for 992 subjects in HCP
+	obtained from Sofie Valk: https://mail.google.com/mail/u/0/#search/valk%40cbs.mpg.de/FMfcgzGkZQHbzSxRCcFjpnVxBXjQvQCQ
+
+mpc_check.ipynb - notebook loading and exploring data structure of MPC.mat. no outputs from here
+
+get_mpc_ids.ipynb - notebook that loads in MPC.mat as well as demographic csv and, assuming ordering of MPC.mat matches ordering of increasing subject ids, detects subject ids that have/dont have MPC data
+		  - outputs mpc_subjectids.csv, list of subjects with MPC
+                  - outputs unrestricted_patelmo6_8_19_2021_8_21_44_MPC.csv, unrestricted data for subjects with MPC
+
+??????_mpc.txt = 400x400 mpc matrix for each subject, computed via ../get_mpc_data.py

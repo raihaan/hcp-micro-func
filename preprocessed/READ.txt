@@ -1,0 +1,16 @@
+This folder computes RSFC, MPC matrices for each subject
+computes coupling coefficients for each subject
+coupling coefficient is the main data  to analyze in this project. It is a numregionsx1 vector (numregions=400) for each subject,
+represents the node level correlation between MPC and RSFC for each subject
+
+*MPC data is precomputed by collaborator, see mpc/ folder for more
+
+get_mpc_data.py - writes out .txt file for each subject with name ${subjectid}_mpc.txt that is 400x400 matrix of subjects MPC data
+
+Commands run (on Niagara):
+module load cobralab/2019b
+for subj in ../raw_data/functional/??????; do ./rsfc_preproc.sh $subj; done
+for file in ??????/*joblist; do echo bash $file; done > rsfcpreproc_joblist
+qbatch -w 00:45:00 -c 400 rsfcpreproc_joblist
+python get_mpc_data.py
+python compute_coupling.py
