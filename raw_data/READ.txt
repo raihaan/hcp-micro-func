@@ -1,0 +1,34 @@
+#all subjects data - 1206 subjects total
+RESTRICTED_patelmo6_8_19_2021_8_22_12.csv - restricted data for all 1206 subjects, includes related subjects
+unrestricted_patelmo6_8_19_2021_8_21_44.csv - unrestricted data for all 1206 subjects, includes related subjects
+downloaded from connectomeDB database
+
+
+#all r277 recons data - 897 subjects total
+RESTRICTED_patelmo6_2_4_2021_9_31_7_r277.csv - restricted data for 897 subjects with r277 recon, includes related subjects
+unrestricted_patelmo6_2_4_2021_10_21_41_r277.csv - unrestricted data for 897 subjects with r277 recon, includes related subjects
+**Note: original filenames were  RESTRICTED_patelmo6_2_4_2021_9_31_7.csv and unrestricted_patelmo6_2_4_2021_10_21_41.csv, i renamed for easy identify of r277 set**
+
+unrestricted_patelmo6_8_19_2021_8_21_44_MPC.csv - list of 1093 subjects with valid MPC data. created with ../preprocessed/mpc/get_mpc_ids.ipynb
+
+merged_sorted_r277_mpc_8_24_2021.csv - merge of restricted data and unrestricted_patelmo6_8_19_2021_8_21_44_MPC.csv, filtered for subjects with at least 1 T1 and T2, and at least 2 rsfmri sessions
+*this is the current FULL (unrelated and related) set of subjects
+created with merge.ipynb
+
+
+
+#3 sets of unrelated data created to be used for analysis
+create_unrelated_sets.ipynb reads in merged_sorted_r277_mpc_8_24_2021.csv and creates unrelated sets of subjects based on family ID column:
+merged_sorted_r277_unrelated_setA_n384.csv - main analysis set 
+merged_sorted_r277_unrelated_setB_n295.csv - possible secondary analysis, currently unused
+merged_sorted_r277_unrelated_setC_n151.csv - possible secondary analysis, currently unused
+
+setAlist.csv - list of subject ids in set A. manually created from merged_sorted_r277_unrelated_setA_n384.csv
+df_stability.csv - subject ids, age and sex columns for creating stratified stability sets. created manually from merged_sorted_r277_unrelated_setA_n384.csv
+
+functional/
+	contains minimally preprocessed fmri data for setA subjects, downloaded from connectome db
+
+atlas_files/
+	contains cifti HCP parcellation files for Schaeffer atlas
+	downloaded from https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/brain_parcellation/Schaefer2018_LocalGlobal/Parcellations/HCP/fslr32k/cifti
