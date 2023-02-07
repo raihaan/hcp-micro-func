@@ -1,0 +1,41 @@
+this folder contains data and script for analysis of microstructural-functional coupling
+
+
+All python scripts require microfunc environement (microfunc_spec.txt)
+Any wb_command or wb_view requires HCP workbench (module load HCP_ConnectomeWorkbench/1.3.2 on CIC, module load cobralab/2019b on Niagara)
+
+Dataset: HCP Young Adult
+Data Types: Structural (T1w/T2w) and resting state functional
+
+General process:
+1. Identify subsets of unrelated subjects, select a set of unrealted subjects to analyze
+2. Compute rsfc matrix for each individual
+3. Compute microstrucutral profile similariy (MPC) for each subject
+	** for this step I used previously computed collaborator data
+	** output (mpc matrices) are in preprocessed/
+4. Build NMF input matrix
+5. Run NMF stability
+6. Run final NMF based on stability
+7. Run PLS
+
+
+
+raw_data/
+	contains relevant functional, structural raw data
+	contains demographic spreadsheets and info on subjects analyzed
+	contains precomputed atlas parcellation files downloaded
+
+preprocessed/
+	contains MPC and RSFC matrices for each subject
+	contains regional coupling coefficient arrays for each subject
+	contains scripts to compute these data as well
+
+derivatives/
+	contains concatenated coupling coefficients
+	each subjects coupling measurements are stacked to form a region x subjects matrix for nmf analysis
+
+analysis/
+	contains scripts and outputs for pls and nmf analysis
+	contains figure making scripts/files
+analysis/paper
+	contains scripts for making each of the 5 results figures. if you are looking for just the reproduction of figures, go here 
